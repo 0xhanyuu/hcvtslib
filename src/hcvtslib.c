@@ -2,15 +2,15 @@
 
 // cursor positioning
 
-void cursor_move_up(int num) { printf("\e[%dA", num); }
-void cursor_move_down(int num) { printf("\e[%dB", num); }
-void cursor_move_forward(int num) { printf("\e[%dC", num); }
-void cursor_move_backward(int num) { printf("\e[%dD", num); }
-void cursor_move_prevline(int num) { printf("\e[%dE", num); }
-void cursor_move_nextline(int num) { printf("\e[%dF", num); }
-void cursor_horizontal(int num) { printf("\e[%dG", num); }
-void cursor_vertical(int num) { printf("\e[%dd", num); }
-void cursor_pos(int x, int y) { printf("\e[%d;%dH", x, y); }
+int cursor_move_up(int num, FILE * stream) { return fprintf(stream, "\e[%dA", num); }
+int cursor_move_down(int num, FILE * stream) { return fprintf(stream, "\e[%dB", num); }
+int cursor_move_forward(int num, FILE * stream) { return fprintf(stream, "\e[%dC", num); }
+int cursor_move_backward(int num, FILE * stream) { return fprintf(stream, "\e[%dD", num); }
+int cursor_move_prevline(int num, FILE * stream) { return fprintf(stream, "\e[%dE", num); }
+int cursor_move_nextline(int num, FILE * stream) { return fprintf(stream, "\e[%dF", num); }
+int cursor_horizontal(int num, FILE * stream) { return fprintf(stream, "\e[%dG", num); }
+int cursor_vertical(int num, FILE * stream) { return fprintf(stream, "\e[%dd", num); }
+int cursor_pos(int x, int y, FILE * stream) { return fprintf(stream, "\e[%d;%dH", x, y); }
 
 // cursor visibility
 
