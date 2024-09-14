@@ -14,4 +14,9 @@ int cursor_pos(int x, int y, FILE * stream) { return fprintf(stream, "\e[%d;%dH"
 
 // cursor visibility
 
+int cursor_enable_blinking() { return printf("\e[?12h"); }
+int cursor_disable_blinking() { return printf("\e[?12l"); }
+int cursor_show() { return printf("\e[?25h"); }
+int cursor_hide() { return printf("\e[?25l"); }
+
 // text modification
