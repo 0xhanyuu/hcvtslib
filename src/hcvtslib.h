@@ -14,4 +14,9 @@ int cursor_pos(int x, int y, FILE * stream);
 
 // cursor visibility
 
+int cursor_enable_blinking();
+int cursor_disable_blinking();
+int cursor_show();
+int cursor_hide();
+
 // text modification
