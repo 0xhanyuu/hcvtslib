@@ -20,3 +20,9 @@ int cursor_show() { return printf("\e[?25h"); }
 int cursor_hide() { return printf("\e[?25l"); }
 
 // text modification
+
+int insert_character(int num, FILE * stream) { return fprintf(stream, "\e[%d@", num); }
+int delete_character(int num, FILE * stream) { return fprintf(stream, "\e[%dP", num); }
+int erase_character(int num, FILE * stream) { return fprintf(stream, "\e[%dX", num); }
+int insert_line(int num, FILE * stream) { return fprintf(stream, "\e[%dL", num); }
+int delete_line(int num, FILE * stream) { return fprintf(stream, "\e[%dM", num); }
