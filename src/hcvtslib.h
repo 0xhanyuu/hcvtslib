@@ -20,3 +20,9 @@ int cursor_show();
 int cursor_hide();
 
 // text modification
+
+int insert_character(int num);
+int delete_character(int num);
+int erase_character(int num);
+int insert_line(int num);
+int delete_line(int num);
